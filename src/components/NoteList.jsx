@@ -5,7 +5,7 @@ import NoteItem from "./NoteItem";
 function NoteList() {
 
   const { notes } = useContext(NotesContext);
-  const [selected, setSelected] = useState(null);
+  const [selectedNotes, setSelectedNotes] = useState([]);
 
   const totalNotes = useMemo(() => {
     return notes.length;
@@ -20,8 +20,14 @@ function NoteList() {
         <NoteItem
           key={index}
           note={note}
-          isSelected={selected === index}
-          onClick={() => setSelected(index)}
+          isSelected={selectedNotes.includes(index)}
+          onClick={() => {
+            if (selectedNotes.includes(index)) {
+              setSelectedNotes(selectedNotes.filter((i) => i !== index));
+            } else {
+              setSelectedNotes([...selectedNotes, index]);
+            }
+          }}
         />
       ))}
 

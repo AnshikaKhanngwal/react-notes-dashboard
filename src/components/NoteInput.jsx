@@ -20,7 +20,7 @@ function NoteInput() {
   };
 
   return (
-    <div>
+    <div className="input-group">
       <input
         ref={inputRef}
         value={note}
