@@ -21,11 +21,7 @@ function NoteInput() {
 
   return (
     <div className="input-group">
-      <input
-        ref={inputRef}
-        value={note}
-        onChange={(e) => setNote(e.target.value)}
-        placeholder="Write a note..."
+      <input ref={inputRef} value={note} onChange={(e) => setNote(e.target.value)} placeholder="Write a note..."
       />
 
       <button onClick={handleAdd}>Add Note</button>

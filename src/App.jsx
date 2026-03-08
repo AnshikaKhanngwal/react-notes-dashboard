@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="container">
       <div className="card">
-        <h1 className="title">📝 Notes Dashboard</h1>
+        <h1 className="title"> Notes Dashboard </h1>
 
         <NoteInput />
         <NoteList />
